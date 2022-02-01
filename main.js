@@ -20,17 +20,17 @@ if(!(selected_for_all && Object.keys(selected_for_all).length)) {
         selected_for_all = {all: users.length, active: 0, selected: 0}
     }
 
-renderUsers()
+renderUsers(users)
 
-function renderUsers() {
+function renderUsers(usersList) {
     tbody.innerHTML = null
     let count = 0;
     checkbox.checked = checked_checkbox
-    all.textContent = '/' + ' ' + users.length
+    all.textContent = '/' + ' ' + usersList.length
     active.textContent = '/' + ' ' + selected_for_all.active
     selected.textContent = '/' + ' ' + selected_for_all.selected
-    console.log(typeof checked_checkbox)
-    for(let user of users) {
+
+    for(let user of usersList) {
         const [tr, td1, div, input, label, td2, div2, i1, td3, td4, span1, td5, i2, td6, div3, btn1, btn2, i3] = createELement('tr', 'td', 'div', 'input', 'label',
             'td', 'div', 'i', 'td', 'td', 'span', 'td', 'i', 'td', 'div', 'button', 'button', 'i')
 
@@ -89,18 +89,18 @@ function renderUsers() {
             if(this.checked) {
                user.checked = true
                 selected_for_all.selected += 1
-                if(selected_for_all.selected == users.length) checked_checkbox = true
+                if(selected_for_all.selected == usersList.length) checked_checkbox = true
             } else {
                 user.checked = false
                 selected_for_all.selected -= 1
                 checked_checkbox = false
             }
 
-            window.localStorage.setItem('users', JSON.stringify(users))
+            window.localStorage.setItem('users', JSON.stringify(usersList))
             window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
             window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
 
-            renderUsers()
+            renderUsers(usersList)
         })
 
         i2.onclick = function () {
@@ -114,6 +114,10 @@ function renderUsers() {
             window.localStorage.setItem('users', JSON.stringify(users))
             window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
             window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
+        }
+
+        btn2.onclick = function () {
+            console.log(this)
         }
     }
 
@@ -138,7 +142,7 @@ checkbox.addEventListener('change', function() {
     window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
     window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
     window.localStorage.setItem('users', JSON.stringify(users))
-    renderUsers()
+    renderUsers(users)
 })
 
 function createELement(...arr) {
