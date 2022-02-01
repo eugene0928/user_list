@@ -5,10 +5,10 @@ const active = document.querySelector('#active')
 const selected = document.querySelector('#selected')
 const checkbox = document.querySelector('#all-items')
 
-users =  JSON.parse(users) || [ {name: 'Umidjon', date: '31 January 2022', checked: false, active: false, password: '123456789'},
-    {name: 'Alex', date: '31 January 2022', checked: false, active: false, password: '123456789'},
-    {name: 'Abror', date: '31 January 2022', checked: false, active: false, password: '123456789'},
-    {name: 'Abdugani', date: '31 January 2022', checked: false, active: false, password: '123456789'}]
+users =  JSON.parse(users) || [ {id: 1, name: 'Umidjon', date: '31 January 2022', checked: false, active: false, password: '123456789', about: ''},
+    {id: 2, name: 'Alex', date: '31 January 2022', checked: false, active: false, password: '123456789', about: ''},
+    {id: 3, name: 'Abror', date: '31 January 2022', checked: false, active: false, password: '123456789', about: ''},
+    {id: 4, name: 'Abdugani', date: '31 January 2022', checked: false, active: false, password: '123456789', about: ''}]
 
 let checked_checkbox = window.localStorage.getItem('all-checked')
 checked_checkbox = JSON.parse(checked_checkbox) || false
@@ -96,9 +96,6 @@ function renderUsers(usersList) {
                 checked_checkbox = false
             }
 
-            window.localStorage.setItem('users', JSON.stringify(usersList))
-            window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
-            window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
 
             renderUsers(usersList)
         })
@@ -107,19 +104,31 @@ function renderUsers(usersList) {
             if(!user.active) {
                 i2.setAttribute('class', 'fa fa-fw text-secondary cursor-pointer fa-toggle-on')
                 user.active = true
+                selected_for_all.active += 1
             } else {
                 i2.setAttribute('class', 'fa fa-fw text-secondary cursor-pointer fa-toggle-off')
                 user.active = false
+                selected_for_all.active -= 1
             }
-            window.localStorage.setItem('users', JSON.stringify(users))
-            window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
-            window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
+
+            renderUsers(usersList)
         }
 
         btn2.onclick = function () {
-            console.log(this)
+            usersList.splice(usersList.indexOf(user), 1)
+            this.parentNode.parentNode.parentNode.remove()
+            if(user.checked) {
+                selected_for_all.selected -= 1;
+            }
+            if(user.active) {
+                selected_for_all.active -= 1;
+            }
+            renderUsers(usersList)
         }
     }
+    window.localStorage.setItem('users', JSON.stringify(users))
+    window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
+    window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
 
 }
 
