@@ -4,6 +4,7 @@ const tbody = document.querySelector('tbody')
 const active = document.querySelector('#active')
 const selected = document.querySelector('#selected')
 const checkbox = document.querySelector('#all-items')
+const searchName = document.querySelector('#searchName')
 
 users =  JSON.parse(users) || [ {id: 1, name: 'Umidjon', date: '31 January 2022', checked: false, active: false, password: '123456789', about: ''},
     {id: 2, name: 'Alex', date: '31 January 2022', checked: false, active: false, password: '123456789', about: ''},
@@ -152,6 +153,21 @@ checkbox.addEventListener('change', function() {
     window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
     window.localStorage.setItem('users', JSON.stringify(users))
     renderUsers(users)
+})
+
+searchName.addEventListener("input", ()=>{
+    const regex = new RegExp(searchName.value, 'gi')
+    const res = users.filter((e) => e.name.match(regex))
+    selected_for_all.active = 0
+    selected_for_all.selected = 0
+    if(res.length) {
+        for(let user of res) {
+            if(user.checked) selected_for_all.selected += 1
+            if(user.active) selected_for_all.active += 1
+        }
+    }
+    window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
+    renderUsers(res)
 })
 
 function createELement(...arr) {
