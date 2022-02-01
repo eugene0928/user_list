@@ -5,8 +5,10 @@ const active = document.querySelector('#active')
 const selected = document.querySelector('#selected')
 const checkbox = document.querySelector('#all-items')
 
-users =  JSON.parse(users) || [ {name: 'Umidjon', date: '31 January 2022', checked: false, active: false},
-    {name: 'Alex', date: '31 January 2022', checked: false, active: false}]
+users =  JSON.parse(users) || [ {name: 'Umidjon', date: '31 January 2022', checked: false, active: false, password: '123456789'},
+    {name: 'Alex', date: '31 January 2022', checked: false, active: false, password: '123456789'},
+    {name: 'Abror', date: '31 January 2022', checked: false, active: false, password: '123456789'},
+    {name: 'Abdugani', date: '31 January 2022', checked: false, active: false, password: '123456789'}]
 
 let checked_checkbox = window.localStorage.getItem('all-checked')
 checked_checkbox = JSON.parse(checked_checkbox) || false
@@ -56,7 +58,10 @@ function renderUsers() {
         td3.setAttribute('class', 'text-nowrap align-middle')
         td4.setAttribute('class', 'text-nowrap align-middle')
         td5.setAttribute('class', 'text-center align-middle')
-        i2.setAttribute('class', 'fa fa-fw text-secondary cursor-pointer fa-toggle-off')
+        i2.setAttribute('class', 'fa fa-fw text-secondary cursor-pointer')
+        if(user.active) i2.classList.add('fa-toggle-on')
+        else i2.classList.add('fa-toggle-off')
+
         td6.setAttribute('class', 'text-center align-middle')
         div3.setAttribute('class', 'btn-group align-top')
         btn1.setAttribute('class', 'btn btn-sm btn-outline-secondary badge')
@@ -97,6 +102,19 @@ function renderUsers() {
 
             renderUsers()
         })
+
+        i2.onclick = function () {
+            if(!user.active) {
+                i2.setAttribute('class', 'fa fa-fw text-secondary cursor-pointer fa-toggle-on')
+                user.active = true
+            } else {
+                i2.setAttribute('class', 'fa fa-fw text-secondary cursor-pointer fa-toggle-off')
+                user.active = false
+            }
+            window.localStorage.setItem('users', JSON.stringify(users))
+            window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
+            window.localStorage.setItem('selected', JSON.stringify(selected_for_all))
+        }
     }
 
 }
