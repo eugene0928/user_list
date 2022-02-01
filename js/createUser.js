@@ -31,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
         confirmPassword.value = null
         modalTitle.textContent = 'Create user'
         modalBtn.textContent = 'Create'
+        formEmail.disabled = false
     })
 
     /**
