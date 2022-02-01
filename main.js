@@ -15,7 +15,7 @@ let selected_for_all = window.localStorage.getItem('selected')
 selected_for_all = JSON.parse(selected_for_all)
 
 if(!(selected_for_all && Object.keys(selected_for_all).length)) {
-        selected_for_all = {all: 0, active: 0, selected: 0}
+        selected_for_all = {all: users.length, active: 0, selected: 0}
     }
 
 renderUsers()
@@ -24,7 +24,7 @@ function renderUsers() {
     tbody.innerHTML = null
     let count = 0;
     checkbox.checked = checked_checkbox
-    all.textContent = '/' + ' ' + selected_for_all.all
+    all.textContent = '/' + ' ' + users.length
     active.textContent = '/' + ' ' + selected_for_all.active
     selected.textContent = '/' + ' ' + selected_for_all.selected
     console.log(typeof checked_checkbox)
