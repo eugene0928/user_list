@@ -58,57 +58,57 @@
                                             <th>Actions</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="align-middle">               <!-- check box uchun -->
-                                                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                    <input type="checkbox" class="custom-control-input" id="item-1">
-                                                    <label class="custom-control-label" for="item-1"></label>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center">       <!-- rasm belgisi -->
-                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
-                                            </td>
-                                            <td class="text-nowrap align-middle">Adam Cotter</td>
-                                            <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>
-                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>  <!-- active/inactive -->
-                                            <td class="text-center align-middle">           <!-- action -->
-                                                <div class="btn-group align-top">
-                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
-                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                    <input type="checkbox" class="custom-control-input" id="item-2">
-                                                    <label class="custom-control-label" for="item-2"></label>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
-                                            </td>
-                                            <td class="text-nowrap align-middle">Pauline Noble</td>
-                                            <td class="text-nowrap align-middle"><span>26 Jan 2018</span></td>
-                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
-                                            <td class="text-center align-middle">
-                                                <div class="btn-group align-top">
-                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
-                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                    <input type="checkbox" class="custom-control-input" id="item-3">
-                                                    <label class="custom-control-label" for="item-3"></label>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
-                                            </td>
+                                        <tbody id="tbody">
+<!--                                        <tr>-->
+<!--                                            <td class="align-middle">               &lt;!&ndash; check box uchun &ndash;&gt;-->
+<!--                                                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">-->
+<!--                                                    <input type="checkbox" class="custom-control-input" id="item-1">-->
+<!--                                                    <label class="custom-control-label" for="item-1"></label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td class="align-middle text-center">       &lt;!&ndash; rasm belgisi &ndash;&gt;-->
+<!--                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>-->
+<!--                                            </td>-->
+<!--                                            <td class="text-nowrap align-middle">Adam Cotter</td>-->
+<!--                                            <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>-->
+<!--                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>  &lt;!&ndash; active/inactive &ndash;&gt;-->
+<!--                                            <td class="text-center align-middle">           &lt;!&ndash; action &ndash;&gt;-->
+<!--                                                <div class="btn-group align-top">-->
+<!--                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>-->
+<!--                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td class="align-middle">-->
+<!--                                                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">-->
+<!--                                                    <input type="checkbox" class="custom-control-input" id="item-2">-->
+<!--                                                    <label class="custom-control-label" for="item-2"></label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td class="align-middle text-center">-->
+<!--                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>-->
+<!--                                            </td>-->
+<!--                                            <td class="text-nowrap align-middle">Pauline Noble</td>-->
+<!--                                            <td class="text-nowrap align-middle"><span>26 Jan 2018</span></td>-->
+<!--                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>-->
+<!--                                            <td class="text-center align-middle">-->
+<!--                                                <div class="btn-group align-top">-->
+<!--                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>-->
+<!--                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td class="align-middle">-->
+<!--                                                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">-->
+<!--                                                    <input type="checkbox" class="custom-control-input" id="item-3">-->
+<!--                                                    <label class="custom-control-label" for="item-3"></label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td class="align-middle text-center">-->
+<!--                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>-->
+<!--                                            </td>-->
 <!--                                            <td class="text-nowrap align-middle">Sherilyn Metzel</td>-->
 <!--                                            <td class="text-nowrap align-middle"><span>27 Jan 2018</span></td>-->
 <!--                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>-->
@@ -289,16 +289,16 @@
 <!--                                            <td class="align-middle text-center">-->
 <!--                                                <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>-->
 <!--                                            </td>-->
-                                            <td class="text-nowrap align-middle">Letizia Puncher</td>
-                                            <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>
-                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
-                                            <td class="text-center align-middle">
-                                                <div class="btn-group align-top">
-                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
-                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                </div>
-                                            </td>
-                                        </tr>
+    <!--                                            <td class="text-nowrap align-middle">Letizia Puncher</td>-->
+    <!--                                            <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>-->
+    <!--                                            <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>-->
+    <!--                                            <td class="text-center align-middle">-->
+    <!--                                                <div class="btn-group align-top">-->
+    <!--                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>-->
+    <!--                                                    <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>-->
+    <!--                                                </div>-->
+    <!--                                            </td>-->
+    <!--                                        </tr>-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -327,9 +327,9 @@
                             <hr class="my-3">           <!-- active all ni ko'rsatadigan joy -->
                             <div class="e-navlist e-navlist--active-bold">
                                 <ul class="nav">
-                                    <li class="nav-item active"><a href="" class="nav-link"><span>All</span>&nbsp;<small>/&nbsp;32</small></a></li>
-                                    <li class="nav-item"><a href="" class="nav-link"><span>Active</span>&nbsp;<small>/&nbsp;16</small></a></li>
-                                    <li class="nav-item"><a href="" class="nav-link"><span>Selected</span>&nbsp;<small>/&nbsp;0</small></a></li>
+                                    <li class="nav-item active"><a href="" class="nav-link"><span>All</span>&nbsp;<small id="all">/&nbsp;0</small></a></li>
+                                    <li class="nav-item"><a href="" class="nav-link"><span>Active</span>&nbsp;<small id="active">/&nbsp;0</small></a></li>
+                                    <li class="nav-item"><a href="" class="nav-link"><span>Selected</span>&nbsp;<small id="selected">/&nbsp;0</small></a></li>
                                 </ul>
                             </div>
                             <hr class="my-3">
