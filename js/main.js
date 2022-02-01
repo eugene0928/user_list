@@ -127,6 +127,28 @@ function renderUsers(usersList) {
             selected_for_all.all -= 1;
             renderUsers(usersList)
         }
+
+        btn1.onclick = () => {
+            const formFullName = document.querySelector('#formFullName');
+            const formUsername = document.querySelector('#formUsername');
+            const formEmail = document.querySelector('#formEmail');
+            const formAbout = document.querySelector('#formAbout');
+            const modalTitle = document.querySelector('h5[class="modal-title"]')
+            const modalBtn = document.querySelector('#modalBtn')
+            const currentPassword = document.querySelector('#currentPassword')
+            const newPassword = document.querySelector('#newPassword')
+
+            modalBtn.textContent = "Save Changes"
+            modalTitle.textContent = 'Edit user'
+            formUsername.value = user.username
+            formFullName.value = user.name
+            formAbout.value = user.about
+            formEmail.disabled = true
+            currentPassword.disabled = false
+            newPassword.disabled = true
+            formEmail.value = user.email
+
+        }
     }
     window.localStorage.setItem('users', JSON.stringify(users))
     window.localStorage.setItem('all-checked', JSON.stringify(checked_checkbox))
