@@ -124,6 +124,7 @@ function renderUsers(usersList) {
             if(user.active) {
                 selected_for_all.active -= 1;
             }
+            selected_for_all.all -= 1;
             renderUsers(usersList)
         }
     }
